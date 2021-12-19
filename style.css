@@ -1,0 +1,98 @@
+@font-face {
+    font-family: Minecraft;
+    src: url('https://hillcraft-server.github.io/minecraft_font.woff');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #b12121;
+    padding: 15px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.logo {
+    width: 100%;
+    max-width: 60px;
+    display: block;
+}
+
+.pagetitle {
+    font-size: 25px;
+    color: #fff;
+    margin: 15px;
+    font-family: Minecraft, sans-serif;
+}
+
+#feed {
+    margin-top: 90px;
+    padding: 10px;
+    width: 100%;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.loading {
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+
+    animation: fade 1s ease-in-out infinite;
+    animation-direction: alternate-reverse;
+}
+
+.post .title {
+    font-size: 20px;
+    font-family: Minecraft, sans-serif;
+    margin-bottom: 10px;
+}
+
+.post .content {
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 10px;
+}
+
+.post .timestamp {
+    font-size: 10px;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.post {
+    border-bottom: 2px solid #bababa;
+    margin-bottom: 10px;
+}
+
+.post:last-of-type {
+    border-bottom: none;
+}
+
+.noposts {
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
