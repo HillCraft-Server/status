@@ -40,4 +40,12 @@ get(ref(database, "status/")).then(function(snapshot) {
             <p class="timestamp">Posted on ${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}</p>
         </div>`;
     }).join("");
-})
+});
+
+// Automatic ping readout
+const pingReadout = document.getElementById("ping");
+
+fetch("https://api.mcsrvstat.us/2/hillcraft.mcraft.pro").then(response => response.json()).then(data => {
+    pingReadout.innerHTML = data.online ? "Online" : "Offline";
+    pingReadout.classList.add(data.online ? "online" : "offline");
+});
