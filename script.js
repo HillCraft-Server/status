@@ -30,8 +30,8 @@ get(ref(database, "status/")).then(function(snapshot) {
         return;
     }
 
-    // Display the posts
-    document.getElementById("feed").innerHTML = Object.values(snapshot.val()).map(post => {
+    // Display the posts with the newest posts at the top
+    document.getElementById("feed").innerHTML = Object.values(snapshot.val()).reverse().map(post => {
         let date = new Date(post.timestamp);
 
         return `<div class="post">
