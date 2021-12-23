@@ -11,18 +11,20 @@
     box-sizing: border-box;
 }
 
+
+
 header {
     background-color: #b12121;
     padding: 15px;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
+
 
 .logo {
     width: 100%;
@@ -95,4 +97,31 @@ header {
     text-align: center;
     font-size: 20px;
     font-family: 'Montserrat', sans-serif;
+}
+
+header .left {
+    display: flex;
+}
+
+header .right {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: Minecraft, sans-serif;
+}
+
+header .online {
+    color: #00d400
+}
+
+header .offline {
+    color: #b12121
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
 }
