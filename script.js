@@ -31,15 +31,17 @@ get(ref(database, "status/")).then(function(snapshot) {
     }
 
     // Display the posts with the newest posts at the top
-    document.getElementById("feed").innerHTML = Object.values(snapshot.val()).reverse().map(post => {
-        let date = new Date(post.timestamp);
+    document.getElementById("feed").innerHTML = Object.values(snapshot.val())
+        .sort((a, b) => b.timestamp - a.timestamp)
+        .map(post => {
+            let date = new Date(post.timestamp);
 
-        return `<div class="post">
-            <h1 class="title">${post.title}</h1>
-            <p class="content">${post.content}</p>
-            <p class="timestamp">Posted on ${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}</p>
-        </div>`;
-    }).join("");
+            return `<div class="post">
+                <h1 class="title">${post.title}</h1>
+                <p class="content">${post.content}</p>
+                <p class="timestamp">Posted on ${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}</p>
+            </div>`;
+        }).join("");
 });
 
 // Automatic ping readout
