@@ -38,7 +38,7 @@ get(ref(database, "status/")).then(function(snapshot) {
 
             return `<div class="post">
                 <h1 class="title">${post.title}</h1>
-                <p class="content">${post.content}</p>
+                <p class="content">${post.content.replaceAll("\n", "<br />")}</p>
                 <p class="timestamp">Posted on ${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()}</p>
             </div>`;
         }).join("");
